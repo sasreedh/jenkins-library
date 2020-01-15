@@ -1325,15 +1325,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-configuration" title="Step configuration" class="md-nav__link">
-    Step configuration
+  <a href="#details" title="Details" class="md-nav__link">
+    Details
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#we-recommend-to-define-values-of-step-parameters-via-configyml-file" title="We recommend to define values of step parameters via config.yml file." class="md-nav__link">
+    We recommend to define values of step parameters via config.yml file.
   </a>
   
 </li>
@@ -1439,15 +1439,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-configuration" title="Step configuration" class="md-nav__link">
-    Step configuration
+  <a href="#details" title="Details" class="md-nav__link">
+    Details
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#we-recommend-to-define-values-of-step-parameters-via-configyml-file" title="We recommend to define values of step parameters via config.yml file." class="md-nav__link">
+    We recommend to define values of step parameters via config.yml file.
   </a>
   
 </li>
@@ -1487,10 +1487,7 @@
                 
                 <h1 id="xsdeploy">xsDeploy<a class="headerlink" href="#xsdeploy" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>Performs an XS deployment</p>
-<p>In case of blue-green deployments the step is called for the deployment in the narrower sense
-and later again for resuming or aborting. In this case both calls needs to be performed from the
-same directory.</p>
+<p>Performs xs deployment</p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1503,109 +1500,137 @@ same directory.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>action</code></td>
-<td>no</td>
-<td><code>NONE</code></td>
-<td>RESUME, ABORT, RETRY</td>
-</tr>
-<tr>
-<td><code>apiUrl</code></td>
-<td>yes</td>
-<td></td>
+<td>action</td>
+<td>No</td>
+<td>NONE</td>
 <td></td>
 </tr>
 <tr>
-<td><code>credentialsId</code></td>
-<td>no</td>
-<td><code>XS</code></td>
+<td>apiUrl</td>
+<td>Yes</td>
+<td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td><code>deployIdLogPattern</code></td>
-<td>no</td>
-<td><code>^.*"xs bg-deploy -i (.*) -a .*".*$</code></td>
+<td>credentialsId</td>
+<td>Yes</td>
+<td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td><code>deployOpts</code></td>
-<td>no</td>
-<td>``</td>
+<td>deployOpts</td>
+<td>No</td>
+<td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td><code>deploymentId</code></td>
-<td>yes</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>docker</code></td>
-<td>no</td>
-<td><code>[dockerImage:, dockerPullImage:false]</code></td>
+<td>dockerImage</td>
+<td>No</td>
+<td>ppiper/xs-cli <br></td>
 <td></td>
 </tr>
 <tr>
-<td><code>loginOpts</code></td>
-<td>no</td>
-<td>``</td>
+<td>dockerName</td>
+<td>No</td>
+<td>xs <br></td>
 <td></td>
 </tr>
 <tr>
-<td><code>mode</code></td>
-<td>no</td>
-<td><code>DEPLOY</code></td>
-<td>DEPLOY, BG_DEPLOY</td>
-</tr>
-<tr>
-<td><code>mtaPath</code></td>
-<td>yes</td>
-<td></td>
+<td>dockerPullImage</td>
+<td>No</td>
+<td>false <br></td>
 <td></td>
 </tr>
 <tr>
-<td><code>org</code></td>
-<td>yes</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>script</code></td>
-<td>yes</td>
-<td></td>
+<td>dockerWorkspace</td>
+<td>No</td>
+<td>\<empty\> <br></td>
 <td></td>
 </tr>
 <tr>
-<td><code>space</code></td>
-<td>yes</td>
-<td></td>
+<td>loginOpts</td>
+<td>Yes</td>
+<td><nil></td>
 <td></td>
 </tr>
 <tr>
-<td><code>xsSessionFile</code></td>
-<td>no</td>
-<td><code>.xsconfig</code></td>
+<td>mode</td>
+<td>No</td>
+<td>DEPLOY</td>
+<td></td>
+</tr>
+<tr>
+<td>mtaPath</td>
+<td>Yes</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>operationId</td>
+<td>No</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>operationIdLogPattern</td>
+<td>No</td>
+<td>^.<em>xs bg-deploy -i (.</em>) -a.*$</td>
+<td></td>
+</tr>
+<tr>
+<td>org</td>
+<td>Yes</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>password</td>
+<td>Yes</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>space</td>
+<td>Yes</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>user</td>
+<td>Yes</td>
+<td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>xsSessionFile</td>
+<td>No</td>
+<td><nil></td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<h2 id="details">Details<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>action</code> - Used for finalizing the blue-green deployment.</li>
-<li><code>apiUrl</code> - The endpoint</li>
-<li><code>credentialsId</code> - The credentialsId</li>
-<li><code>deployIdLogPattern</code> - Regex pattern for retrieving the ID of the deployment.</li>
-<li><code>deployOpts</code> - Additional options appended to the deploy command. Only needed for sophisticated cases. When provided it is the duty of the provider to ensure proper quoting / escaping.</li>
-<li><code>deploymentId</code> - </li>
-<li><code>docker</code> - A map containing properties forwarded to dockerExecute. For more details see <a href="../dockerExecute">here</a></li>
-<li><code>loginOpts</code> - Additional options appended to the login command. Only needed for sophisticated cases. When provided it is the duty of the provider to ensure proper quoting / escaping.</li>
-<li><code>mode</code> - Controls if there is a standard deployment or a blue green deployment</li>
-<li><code>mtaPath</code> - The path to the deployable. If not provided explicitly it is retrieved from the common pipeline environment (Parameter <code>mtarFilePath</code>).</li>
-<li><code>org</code> - The organization</li>
-<li><code>script</code> - The common script environment of the Jenkinsfile running. Typically the reference to the script calling the pipeline step is provided with the <code>this</code> parameter, as in <code>script: this</code>. This allows the function to access the <code>commonPipelineEnvironment</code> for retrieving, e.g. configuration parameters.</li>
-<li><code>space</code> - The space</li>
-<li><code>xsSessionFile</code> - The file name of the file representing the sesssion after <code>xs login</code>. Should not be changed normally.</li>
+<li><code>action</code> :  Used for finalizing the blue-green deployment. </li>
+<li><code>apiUrl</code> :  The api url (e.g. https://example.org:12345 </li>
+<li><code>credentialsId</code> :  Jenkins username/password credential for accessing xs endpoint. </li>
+<li><code>deployOpts</code> :  Additional options appended to the deploy command. Only needed for sophisticated cases. When provided it is the duty of the provider to ensure proper quoting / escaping. </li>
+<li><code>dockerImage</code> :  Name of the docker image that should be used. If empty, Docker is not used and the command is executed directly on the Jenkins system. </li>
+<li><code>dockerName</code> :  Kubernetes only: Name of the container launching dockerImage. SideCar only: Name of the container in local network. </li>
+<li><code>dockerPullImage</code> :  Set this to 'false' to bypass a docker image pull. Usefull during development process. Allows testing of images which are available in the local registry only. </li>
+<li><code>dockerWorkspace</code> :  Kubernetes only: Specifies a dedicated user home directory for the container which will be passed as value for environment variable HOME. </li>
+<li><code>loginOpts</code> :  Additional options appended to the login command. Only needed for sophisticated cases. When provided it is the duty of the provider to ensure proper quoting / escaping. </li>
+<li><code>mode</code> :  Controls if there is a standard deployment or a blue green deployment. Values: 'DEPLOY', 'BG_DEPLOY' </li>
+<li><code>mtaPath</code> :  Path to deployable </li>
+<li><code>operationId</code> :  The operation ID. Used in case of bg-deploy in order to resume or abort a previously started deployment. </li>
+<li><code>operationIdLogPattern</code> :  Regex pattern for retrieving the ID of the operation from the xs log. </li>
+<li><code>org</code> :  The org </li>
+<li><code>password</code> :  Password </li>
+<li><code>space</code> :  The space </li>
+<li><code>user</code> :  User </li>
+<li><code>xsSessionFile</code> :  The file keeping the xs session. </li>
 </ul>
-<h2 id="step-configuration">Step configuration<a class="headerlink" href="#step-configuration" title="Permanent link">&para;</a></h2>
-<p>We recommend to define values of step parameters via <a href="../../configuration/">config.yml file</a>.</p>
+<h2 id="we-recommend-to-define-values-of-step-parameters-via-configyml-file">We recommend to define values of step parameters via <a href="../../configuration/">config.yml file</a>.<a class="headerlink" href="#we-recommend-to-define-values-of-step-parameters-via-configyml-file" title="Permanent link">&para;</a></h2>
 <p>In following sections of the config.yml the configuration is possible:</p>
 <table>
 <thead>
@@ -1617,94 +1642,92 @@ same directory.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>action</code></td>
+<td>action</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>apiUrl</code></td>
+<td>apiUrl</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>credentialsId</code></td>
+<td>deployOpts</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>deployIdLogPattern</code></td>
+<td>dockerImage</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>deployOpts</code></td>
+<td>dockerName</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>deploymentId</code></td>
+<td>dockerPullImage</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>docker</code></td>
+<td>dockerWorkspace</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>loginOpts</code></td>
+<td>loginOpts</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>mode</code></td>
+<td>mode</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>mtaPath</code></td>
+<td>mtaPath</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>org</code></td>
+<td>operationId</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>script</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>space</code></td>
+<td>operationIdLogPattern</td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
-<td><code>xsSessionFile</code></td>
+<td>org</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>password</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>space</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>user</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>xsSessionFile</td>
 <td></td>
 <td>X</td>
 </tr>
 </tbody>
 </table>
-<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
-<p>The step depends on the following Jenkins plugins</p>
-<ul>
-<li><a href="https://plugins.jenkins.io/credentials-binding">credentials-binding</a></li>
-<li><a href="https://plugins.jenkins.io/docker">docker</a></li>
-<li><a href="https://plugins.jenkins.io/kubernetes">kubernetes</a></li>
-<li><a href="https://plugins.jenkins.io/lockable-resources">lockable-resources</a></li>
-<li><a href="https://plugins.jenkins.io/pipeline-utility-steps">pipeline-utility-steps</a></li>
-<li><a href="https://plugins.jenkins.io/workflow-basic-steps">workflow-basic-steps</a></li>
-<li><a href="https://plugins.jenkins.io/workflow-cps-global-lib">workflow-cps-global-lib</a></li>
-<li><a href="https://plugins.jenkins.io/workflow-durable-task-step">workflow-durable-task-step</a></li>
-</ul>
-<p>The kubernetes plugin is only used if running in a kubernetes environment.
-Transitive dependencies are omitted.</p>
-<p>The list might be incomplete.</p>
-<p>Consider using the <a href="https://cloud.docker.com/u/ppiper/repository/docker/ppiper/jenkins-master">ppiper/jenkins-master</a>
-docker image. This images comes with preinstalled plugins.</p>
 <h2 id="side-effects">Side effects<a class="headerlink" href="#side-effects" title="Permanent link">&para;</a></h2>
 <p>none</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
