@@ -1560,6 +1560,12 @@
 <td></td>
 </tr>
 <tr>
+<td><code>returnStdout</code></td>
+<td>no</td>
+<td></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
 <td><code>script</code></td>
 <td>yes</td>
 <td></td>
@@ -1578,6 +1584,7 @@
 <li><code>m2Path</code> - Path to the location of the local repository that should be used.</li>
 <li><code>pomPath</code> - Path to the pom file that should be used.</li>
 <li><code>projectSettingsFile</code> - Path or url to the mvn settings file that should be used as project settings file.</li>
+<li><code>returnStdout</code> - Returns the standard output of the maven command for further processing. By default stdout will be printed to the console but not returned by mavenExecute.</li>
 <li><code>script</code> - The common script environment of the Jenkinsfile running. Typically the reference to the script calling the pipeline step is provided with the <code>this</code> parameter, as in <code>script: this</code>. This allows the function to access the <code>commonPipelineEnvironment</code> for retrieving, e.g. configuration parameters.</li>
 </ul>
 <h2 id="step-configuration">Step configuration<a class="headerlink" href="#step-configuration" title="Permanent link">&para;</a></h2>
@@ -1641,6 +1648,11 @@
 <td><code>projectSettingsFile</code></td>
 <td></td>
 <td>X</td>
+</tr>
+<tr>
+<td><code>returnStdout</code></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>script</code></td>
