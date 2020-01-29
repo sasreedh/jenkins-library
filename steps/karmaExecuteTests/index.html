@@ -1519,7 +1519,7 @@
 <p>The step is using the <code>seleniumExecuteTest</code> step to spin up two containers in a Docker network:</p>
 <ul>
 <li>a Selenium/Chrome container (<code>selenium/standalone-chrome</code>)</li>
-<li>a NodeJS container (<code>node:8-stretch</code>)</li>
+<li>a NodeJS container (<code>node:lts-stretch</code>)</li>
 </ul>
 <p>In the Docker network, the containers can be referenced by the values provided in <code>dockerName</code> and <code>sidecarName</code>, the default values are <code>karma</code> and <code>selenium</code>. These values must be used in the <code>hostname</code> properties of the test configuration (<a href="https://karma-runner.github.io/1.0/config/configuration-file.html">Karma</a> and <a href="https://github.com/karma-runner/karma-webdriver-launcher#usage">WebDriver</a>).</p>
 <div class="admonition note">
@@ -1559,7 +1559,7 @@ docker image. This images comes with preinstalled plugins.</p>
 <tr>
 <td><code>containerPortMappings</code></td>
 <td>no</td>
-<td><code>[node:8-stretch:[[containerPort:9876, hostPort:9876]]]</code></td>
+<td><code>[node:lts-stretch:[[containerPort:9876, hostPort:9876]]]</code></td>
 <td></td>
 </tr>
 <tr>
@@ -1571,7 +1571,7 @@ docker image. This images comes with preinstalled plugins.</p>
 <tr>
 <td><code>dockerImage</code></td>
 <td>no</td>
-<td><code>node:8-stretch</code></td>
+<td><code>node:lts-stretch</code></td>
 <td></td>
 </tr>
 <tr>
