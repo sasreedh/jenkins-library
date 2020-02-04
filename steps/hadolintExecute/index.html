@@ -1529,6 +1529,12 @@ The linter is parsing the Dockerfile into an abstract syntax tree (AST) and perf
 <td></td>
 </tr>
 <tr>
+<td><code>reportName</code></td>
+<td>no</td>
+<td><code>HaDoLint</code></td>
+<td></td>
+</tr>
+<tr>
 <td><code>script</code></td>
 <td>yes</td>
 <td></td>
@@ -1544,6 +1550,7 @@ The linter is parsing the Dockerfile into an abstract syntax tree (AST) and perf
 <li><code>dockerOptions</code> - Docker options to be set when starting the container.</li>
 <li><code>qualityGates</code> - Quality Gates to fail the build, see <a href="https://github.com/jenkinsci/warnings-plugin/blob/master/doc/Documentation.md#quality-gate-configuration">warnings-ng plugin documentation</a>.</li>
 <li><code>reportFile</code> - Name of the result file used locally within the step.</li>
+<li><code>reportName</code> - Name of the checkstyle report being generated our of the results.</li>
 <li><code>script</code> - The common script environment of the Jenkinsfile running. Typically the reference to the script calling the pipeline step is provided with the <code>this</code> parameter, as in <code>script: this</code>. This allows the function to access the <code>commonPipelineEnvironment</code> for retrieving, e.g. configuration parameters.</li>
 </ul>
 <h2 id="step-configuration">Step configuration<a class="headerlink" href="#step-configuration" title="Permanent link">&para;</a></h2>
@@ -1590,6 +1597,11 @@ The linter is parsing the Dockerfile into an abstract syntax tree (AST) and perf
 </tr>
 <tr>
 <td><code>reportFile</code></td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td><code>reportName</code></td>
 <td></td>
 <td>X</td>
 </tr>
