@@ -1488,10 +1488,12 @@
                 <h1 id="abapenvironmentpullgitrepo">abapEnvironmentPullGitRepo<a class="headerlink" href="#abapenvironmentpullgitrepo" title="Permanent link">&para;</a></h1>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>Pulls a git repository (Software Component) to a SAP Cloud Platform ABAP Environment system.
-Please provide either of the following options:
-  * The host and credentials the Cloud Platform ABAP Environment system itself. The credentials must be configured for the Communication Scenario SAP_COM_0510.
-  * The Cloud Foundry parameters (API endpoint, organization, space), credentials, the service instance for the ABAP service and the service key for the Communication Scenario SAP_COM_0510.
-  * Only provide one of those options with the respective credentials. If all values are provided, the direct communication (via host) has priority.</p>
+Please provide either of the following options:</p>
+<ul>
+<li>The host and credentials the Cloud Platform ABAP Environment system itself. The credentials must be configured for the Communication Scenario SAP_COM_0510.</li>
+<li>The Cloud Foundry parameters (API endpoint, organization, space), credentials, the service instance for the ABAP service and the service key for the Communication Scenario SAP_COM_0510.</li>
+<li>Only provide one of those options with the respective credentials. If all values are provided, the direct communication (via host) has priority.</li>
+</ul>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>A SAP Cloud Platform ABAP Environment system is available.
 On this system, a <a href="https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/0377adea0401467f939827242c1f4014.html">Communication User</a>, a <a href="https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/1bfe32ae08074b7186e375ab425fb114.html">Communication System</a> and a <a href="https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a0771f6765f54e1c8193ad8582a32edb.html">Communication Arrangement</a> is setup for the Communication Scenario "SAP Cloud Platform ABAP Environment - Software Component Test Integration (SAP_COM_0510)". This can be done manually through the respective applications on the SAP Cloud Platform ABAP Environment System or through creating a service key for the system on cloud foundry with the parameters {"scenario_id": "SAP_COM_0510", "type": "basic"}.</p>
