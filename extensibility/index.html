@@ -642,29 +642,69 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-stage-exits" title="1. Stage Exits" class="md-nav__link">
-    1. Stage Exits
+  <a href="#1-extend-individual-stages" title="1. Extend individual stages" class="md-nav__link">
+    1. Extend individual stages
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practical-example" title="Practical example" class="md-nav__link">
+    Practical example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-central-custom-template" title="2. Central Custom Template" class="md-nav__link">
-    2. Central Custom Template
+  <a href="#2-modified-ready-made-pipeline" title="2. Modified Ready-Made Pipeline" class="md-nav__link">
+    2. Modified Ready-Made Pipeline
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-project" title="Single project" class="md-nav__link">
+    Single project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-projects" title="Multiple projects" class="md-nav__link">
+    Multiple projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-stay-up-to-date" title="How to stay up-to-date" class="md-nav__link">
+    How to stay up-to-date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-tips-and-information" title="Advanced tips and information" class="md-nav__link">
+    Advanced tips and information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-custom-jenkinsfile" title="3. Custom Jenkinsfile" class="md-nav__link">
-    3. Custom Jenkinsfile
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-tips-and-information" title="Further tips and information" class="md-nav__link">
-    Further tips and information
+  <a href="#3-new-pipeline-from-scratch" title="3. New Pipeline from Scratch" class="md-nav__link">
+    3. New Pipeline from Scratch
   </a>
   
 </li>
@@ -1457,29 +1497,69 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-stage-exits" title="1. Stage Exits" class="md-nav__link">
-    1. Stage Exits
+  <a href="#1-extend-individual-stages" title="1. Extend individual stages" class="md-nav__link">
+    1. Extend individual stages
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practical-example" title="Practical example" class="md-nav__link">
+    Practical example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-central-custom-template" title="2. Central Custom Template" class="md-nav__link">
-    2. Central Custom Template
+  <a href="#2-modified-ready-made-pipeline" title="2. Modified Ready-Made Pipeline" class="md-nav__link">
+    2. Modified Ready-Made Pipeline
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-project" title="Single project" class="md-nav__link">
+    Single project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-projects" title="Multiple projects" class="md-nav__link">
+    Multiple projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-stay-up-to-date" title="How to stay up-to-date" class="md-nav__link">
+    How to stay up-to-date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-tips-and-information" title="Advanced tips and information" class="md-nav__link">
+    Advanced tips and information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-custom-jenkinsfile" title="3. Custom Jenkinsfile" class="md-nav__link">
-    3. Custom Jenkinsfile
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-tips-and-information" title="Further tips and information" class="md-nav__link">
-    Further tips and information
+  <a href="#3-new-pipeline-from-scratch" title="3. New Pipeline from Scratch" class="md-nav__link">
+    3. New Pipeline from Scratch
   </a>
   
 </li>
@@ -1504,79 +1584,187 @@
                 
                 
                 <h1 id="extensibility">Extensibility<a class="headerlink" href="#extensibility" title="Permanent link">&para;</a></h1>
-<p>There are several possibilities for extensibility besides the <strong><a href="../configuration/">very powerful configuration</a></strong>:</p>
-<h2 id="1-stage-exits">1. Stage Exits<a class="headerlink" href="#1-stage-exits" title="Permanent link">&para;</a></h2>
-<p>You have to create a file like <code>&lt;StageName&gt;.groovy</code> (for example, <code>Acceptance.groovy</code>) and store it in folder <code>.pipeline/extensions/</code> in your source code repository.</p>
-<div class="admonition note">
-<p class="admonition-title">Cloud SDK Pipeline</p>
-<p>If you use the Cloud SDK Pipeline, the folder is named <code>pipeline/extensions/</code> (without the dot). For more information, please refer to <a href="https://github.com/SAP/cloud-s4-sdk-pipeline/blob/master/doc/pipeline/extensibility.md">the Cloud SDK Pipeline documentation</a>.</p>
-</div>
-<p>The pipeline template checks if such a file exists and executes it, if present.
-  A parameter that contains the following keys is passed to the extension:</p>
+<p>When using one of the ready-made pipelines of project "Piper", you don't have to write custom pipeline code.
+The pipelines are centrally maintained and can be used with only a small amount of declarative configuration as documented <a href="../configuration/">here</a>.</p>
+<p>For the vast majority of <em>standard</em> projects, the features of the ready-made pipelines should be enough to implement <a href="https://martinfowler.com/bliki/ContinuousDelivery.html">Continuous Delivery</a> with little effort in a best-practice compliant way.
+If you miss a feature or discover a bug in one of our pipelines, please see if there is already an <a href="https://github.com/SAP/jenkins-library/issues">open issue in our GitHub repository</a> and if not, open a new one.</p>
+<p>In some cases, it's not desirable to include specialized features in the ready-made pipelines.
+However, you can still benefit from their qualities, if you address your requirements through an <strong>extension</strong>.
+Extensions are custom bits of pipeline coding, which you can use to implement special requirements.</p>
+<p>This page explains extensibility options in project "Piper".
+For a high level overview of available options and how to interface with them, see this figure:</p>
+<p><img alt="Library Setup" src="../images/levels-of-extensibility.png" title="Extensibility Options" /></p>
+<p>Before building extensions, please make sure that there is no alternative that works better for you.</p>
+<p>Options for extensibility, in the order in which we recommend considering them:</p>
+<h2 id="1-extend-individual-stages">1. Extend individual stages<a class="headerlink" href="#1-extend-individual-stages" title="Permanent link">&para;</a></h2>
+<p>In this option, you use the centrally maintained pipeline but can change individual stages, if required.</p>
+<p>To do so, create a file called <code>&lt;StageName&gt;.groovy</code> (for example, <code>Acceptance.groovy</code> or <code>lint.groovy</code>) in <code>.pipeline/extensions/</code> in the source code repository of your application.</p>
+<p>For this, you need to know the technical identifiers for stage names.</p>
 <ul>
-<li><code>script</code>: defines the global script environment of the Jenkinsfile run. This makes sure that the correct configuration environment can be passed to project "Piper" steps and also allows access to for example the <code>commonPipelineEnvironment</code>.</li>
-<li><code>originalStage</code>: this will allow you to execute the "original" stage at any place in your script. If omitting a call to <code>originalStage()</code> only your code will be executed instead.</li>
-<li><code>stageName</code>: name of the current stage</li>
-<li><code>config</code>: configuration of the stage (including all defaults)</li>
+<li>For the general purpose pipeline, you can find them in <a href="https://github.com/SAP/jenkins-library/blob/master/vars/piperPipeline.groovy">the pipeline source file</a>.</li>
+<li>For the SAP Cloud SDK pipeline, you can find them in <a href="https://github.com/SAP/cloud-s4-sdk-pipeline-lib/search?q=%22def+stageName+%3D%22">this GitHub search query</a>.</li>
 </ul>
-<p>Here a simple example for such an extension:</p>
+<p>The centrally maintained pipeline checks if such a file exists and if it does, executes it.
+A parameter of type <code>Map</code> that contains the following keys is passed to the extension:</p>
+<ul>
+<li><code>script</code>: Defines the global script environment of the <code>Jenkinsfile</code> run. This makes sure that the correct configuration environment can be passed to project "Piper" steps and allows access to the <code>commonPipelineEnvironment</code>, for example.</li>
+<li><code>originalStage</code>: Allows you to execute the "original" stage at any place in your script. If omitting a call to <code>originalStage()</code>, only your code is executed.</li>
+<li><code>stageName</code>: Name of the current stage</li>
+<li><code>config</code>: Configuration of the stage and general config (including all defaults)</li>
+</ul>
+<p>Here is a simple example for such an extension, which you can use as a starting point:</p>
 <div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="n">Map</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">//access stage name</span>
-    <span class="n">echo</span> <span class="s2">&quot;Start - Extension for stage: ${params.stageName}&quot;</span>
+  <span class="c1">//access stage name</span>
+  <span class="n">echo</span> <span class="s2">&quot;Start - Extension for stage: ${params.stageName}&quot;</span>
 
-    <span class="c1">//access config</span>
-    <span class="n">echo</span> <span class="s2">&quot;Current stage config: ${params.config}&quot;</span>
+  <span class="c1">//access config</span>
+  <span class="n">echo</span> <span class="s2">&quot;Current stage config: ${params.config}&quot;</span>
 
-    <span class="c1">//execute original stage as defined in the template</span>
-    <span class="n">params</span><span class="o">.</span><span class="na">originalStage</span><span class="o">()</span>
+  <span class="c1">//execute original stage as defined in the template</span>
+  <span class="n">params</span><span class="o">.</span><span class="na">originalStage</span><span class="o">()</span>
 
-    <span class="c1">//access overall pipeline script object</span>
-    <span class="n">echo</span> <span class="s2">&quot;Branch: ${params.script.commonPipelineEnvironment.gitBranch}&quot;</span>
+  <span class="c1">//access overall pipeline script object</span>
+  <span class="n">echo</span> <span class="s2">&quot;Branch: ${params.script.commonPipelineEnvironment.gitBranch}&quot;</span>
 
-    <span class="n">echo</span> <span class="s2">&quot;End - Extension for stage: ${params.stageName}&quot;</span>
+  <span class="n">echo</span> <span class="s2">&quot;End - Extension for stage: ${params.stageName}&quot;</span>
 <span class="o">}</span>
 <span class="k">return</span> <span class="k">this</span>
 </pre></div>
 
 <div class="admonition note">
+<p class="admonition-title"><code>return this</code></p>
+<p>Don't forget the <code>return this</code>, which is required at the end of <em>all</em> extension scripts.
+This is due to how Groovy loads scripts internally.</p>
+</div>
+<div class="admonition note">
 <p class="admonition-title">Init stage cannot be extended</p>
-<p>Please note, the <code>Init</code> stage among other things also checks out your current repository.<br />Thus it is not possible to use extensions on this stage.</p>
+<p>Please note that the <code>Init</code> stage also checks out your current repository including your extensions.<br />
+Therefore, it is not possible to use extensions on this stage.</p>
 </div>
-<h2 id="2-central-custom-template">2. Central Custom Template<a class="headerlink" href="#2-central-custom-template" title="Permanent link">&para;</a></h2>
-<p>If you have multiple projects where you want to use a custom template, you could implement this similarly to <a href="https://github.com/SAP/jenkins-library/blob/master/vars/piperPipeline.groovy">piperPipeline</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">How to not get decoupled</p>
-<p>Typically, providing a custom template decouples you from centrally provided updates to your template including the stages.<br />
-Where applicable, you can re-use the stage implementations. This means, you will call e.g. <code>piperPipelineStageBuild()</code> as you can see in <a href="https://github.com/SAP/jenkins-library/blob/master/vars/piperPipeline.groovy">piperPipeline</a>.</p>
-<p>Using this approach you can at least benefit from innovations done in individual project "Piper" stages.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">When to go with a custom template</p>
-<p>If the configuration possibilities are not sufficient for you and if <em>1. Stage Exits</em> is not applicable.</p>
-</div>
-<h2 id="3-custom-jenkinsfile">3. Custom Jenkinsfile<a class="headerlink" href="#3-custom-jenkinsfile" title="Permanent link">&para;</a></h2>
-<p>Since project "Piper" fully builds on <a href="https://jenkins.io/doc/book/pipeline-as-code/">Jenkins Pipelines as Code</a>, you can also go with your complete custom <code>Jenkinsfile</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Decoupling</p>
-<p>If you go this route you will be decoupled from the innovations provided with project "Piper", unless you re-use for example stages (as indicated above under <em>2. Central Custom Templates</em>).</p>
-<p><strong>We recommend to use this only as last option for extensibility.</strong></p>
-</div>
-<h2 id="further-tips-and-information">Further tips and information<a class="headerlink" href="#further-tips-and-information" title="Permanent link">&para;</a></h2>
-<p>When you consider to add additional capabilities your first stop should be the <a href="https://jenkins.io/doc/pipeline/steps/">Jenkins Pipeline Steps Reference</a>.
-Here you get an overview about what kind of capabilities are already available and a list of related parameters which you can use to customize the existing implementation. The provided information should help you to understand and extend the functionality of your pipeline.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you consider extensions we recommend you to do it using a custom library according to the <a href="https://jenkins.io/doc/book/pipeline/shared-libraries/">Jenkins shared libraries</a> concept instead of adding groovy coding to the <code>Jenkinsfile</code>.
-Your custom library can easily live next to the provided pipeline library.</p>
-<p>Your Jenkinsfile would then start like</p>
-<div class="codehilite"><pre><span></span>@Library([&#39;piper-lib-os&#39;, &#39;your-custom-lib&#39;]) _
+<h3 id="practical-example">Practical example<a class="headerlink" href="#practical-example" title="Permanent link">&para;</a></h3>
+<p>For a more practical example, you can use extensions in the SAP Cloud SDK pipeline to add custom linters to your pipeline.</p>
+<p>A linter is a tool that can check the source code for certain stylistic criteria. Many teams choose to use a linter to ensure a common programming style.</p>
+<p>For example, if you want to use <a href="https://checkstyle.sourceforge.io/">Checkstyle</a> in your codebase, you might use an extension similar to this one in a file called <code>.pipeline/extensions/lint.groovy</code> in your project:</p>
+<div class="codehilite"><pre><span></span><span class="kt">def</span> <span class="nf">call</span><span class="o">(</span><span class="n">Map</span> <span class="n">parameters</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="n">parameters</span><span class="o">.</span><span class="na">originalStage</span><span class="o">()</span> <span class="c1">// Runs the built-in linters</span>
+
+    <span class="n">mavenExecute</span><span class="o">(</span>
+        <span class="nl">script:</span> <span class="n">parameters</span><span class="o">.</span><span class="na">script</span><span class="o">,</span>
+        <span class="nl">flags:</span> <span class="s1">&#39;--batch-mode&#39;</span><span class="o">,</span>
+        <span class="nl">pomPath:</span> <span class="s1">&#39;application/pom.xml&#39;</span><span class="o">,</span>
+        <span class="nl">m2Path:</span> <span class="n">s4SdkGlobals</span><span class="o">.</span><span class="na">m2Directory</span><span class="o">,</span>
+        <span class="nl">goals:</span> <span class="s1">&#39;checkstyle:checkstyle&#39;</span><span class="o">,</span>
+    <span class="o">)</span>
+
+    <span class="n">recordIssues</span> <span class="nl">blameDisabled:</span> <span class="kc">true</span><span class="o">,</span>
+        <span class="nl">enabledForFailure:</span> <span class="kc">true</span><span class="o">,</span>
+        <span class="nl">aggregatingResults:</span> <span class="kc">false</span><span class="o">,</span>
+        <span class="nl">tool:</span> <span class="n">checkStyle</span><span class="o">()</span>
+<span class="o">}</span>
+
+<span class="k">return</span> <span class="k">this</span>
 </pre></div>
 
-</div>
-<!-- ## Examples
+<p>This code snippet has three components, let's see what is happening here:</p>
+<p>Firstly, we run the original stage.
+This runs the SAP UI5 Best Practices linter as this is a standard feature of SAP Cloud SDK pipeline.</p>
+<p>Secondly, we run the checkstyle maven plugin using the <code>mavenExecute</code> Jenkins library step as provided by project "Piper".
+This serves as an example for how flexible you can re-use what project "Piper" already provides in your extension.</p>
+<p>Finally, we use the Jenkins <a href="https://plugins.jenkins.io/warnings-ng/">Warnings NG plugin</a> and its step <code>recordIssues</code> to make the findings visible in the Jenkins user interface.</p>
+<p>This example can be adapted for other linters of your choice.
+Be sure to checkout the <em>Library steps</em> section of this documentation if you want to do this.
+Project "Piper" provides some basic building blocks such as <code>dockerExecute</code> and the already mentioned <code>mavenExecute</code> which might be helpful.</p>
+<h2 id="2-modified-ready-made-pipeline">2. Modified Ready-Made Pipeline<a class="headerlink" href="#2-modified-ready-made-pipeline" title="Permanent link">&para;</a></h2>
+<p>This option describes how you can copy and paste one of the centrally maintained pipelines to make changes to it that are not possible otherwise.
+For example, you can't change the order of stages and the stages that run in parallel or add new stages to a centrally maintained pipeline.
+This might be done for an individual project (in the <code>Jenkinsfile</code>), or in a separate Git repository so it can be used for multiple projects.</p>
+<h3 id="single-project">Single project<a class="headerlink" href="#single-project" title="Permanent link">&para;</a></h3>
+<p>The default <code>Jenkinsfile</code> of centrally maintained pipelines does nothing else but loading the pipeline and running it.
+This is convenient but limits the modifiable aspects of the pipeline.</p>
+<p>If one of your projects uses the pipeline, the easiest way to do this modification is to copy the pipeline into your <code>Jenkinsfile</code>.</p>
+<p>The basic structure of your <code>Jenkinsfile</code> should be the following:</p>
+<div class="codehilite"><pre><span></span><span class="nd">@Library</span><span class="o">(</span><span class="cm">/* Shared library definition, see below */</span><span class="o">)</span> <span class="n">_</span>
 
-work in progress
--->
+<span class="n">call</span> <span class="nl">script:</span> <span class="k">this</span>
+
+<span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="n">parameters</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Your pipeline code based on our ready-made pipelines</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>The actual pipeline code (the <code>call</code> method in the listing above) can be found here:</p>
+<ul>
+<li><a href="https://github.com/SAP/jenkins-library/blob/master/vars/piperPipeline.groovy">General purpose pipeline</a></li>
+<li><a href="https://github.com/SAP/cloud-s4-sdk-pipeline-lib/blob/master/vars/cloudSdkPipeline.groovy">SAP Cloud SDK pipeline</a></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Use the correct shared library definition</p>
+<p>Which shared library you need depends on the pipeline you're using.<br />
+For the <a href="https://github.com/SAP/jenkins-library/blob/master/vars/piperPipeline.groovy">general purpose pipeline</a>, you need <code>'piper-lib-os'</code>.<br />
+For the <a href="https://github.com/SAP/cloud-s4-sdk-pipeline-lib/blob/master/vars/cloudSdkPipeline.groovy">SAP Cloud SDK pipeline</a>, you need <code>'s4sdk-pipeline-library'</code>.</p>
+</div>
+<p>For the version identifier, please see the section <em>How to stay up-to-date</em> in this document.</p>
+<h3 id="multiple-projects">Multiple projects<a class="headerlink" href="#multiple-projects" title="Permanent link">&para;</a></h3>
+<p>If you have multiple projects that share a similar architecture, it might be desirable to share one modified pipeline amongst them.
+Similar to what you can do in an individual <code>Jenkinsfile</code>, you can copy the pipeline to your own shared library and modify it.</p>
+<p>To do this, create a new Git repository in your preferred Git hosting service.
+It must be compliant to <a href="https://jenkins.io/doc/book/pipeline/shared-libraries/">how Jenkins shared libraries are built</a>.
+In a nutshell, this means that you need a <code>vars</code> directory inside which you can place a copy of your preferred pipeline.</p>
+<p>A minimal example of such a library could have the following directory structure:</p>
+<div class="codehilite"><pre><span></span>./vars/myCustomPipeline.groovy
+./README.md
+</pre></div>
+
+<p><code>myCustomPipeline.groovy</code> contains the modified pipeline code of the <a href="https://github.com/SAP/jenkins-library/blob/master/vars/piperPipeline.groovy">general purpose pipeline</a> or <a href="https://github.com/SAP/cloud-s4-sdk-pipeline-lib/blob/master/vars/cloudSdkPipeline.groovy">SAP Cloud SDK Pipeline</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The name of your custom pipeline <em>must</em> differ from the other pipelines provided by project "Piper" because Jenkins requires names across multiple libraries to be unique.</p>
+</div>
+<p>This library must be placed in a Git repository, which is available for Jenkins and must be configured in Jenkins <a href="https://jenkins.io/doc/book/pipeline/shared-libraries/#using-libraries">as documented here</a>.</p>
+<p>The following screenshot shows an example of the configuration in Jenkins.
+Note that the name (1) must be the same as the one you use in your <code>Jenkinsfile</code>.</p>
+<p><img alt="Library Setup" src="../images/customPipelineLib.png" title="Library Setup" /></p>
+<p>The <code>Jenkinsfile</code> of your individual projects would look similar to the following:</p>
+<div class="codehilite"><pre><span></span><span class="nd">@Library</span><span class="o">([</span><span class="s1">&#39;piper-lib-os&#39;</span><span class="o">,</span><span class="s1">&#39;my-own-pipeline&#39;</span><span class="o">])</span> <span class="n">_</span>
+
+<span class="n">myCustomPipeline</span> <span class="nl">script:</span> <span class="k">this</span>
+</pre></div>
+
+<p>Be sure to adapt the names and version identifiers accordingly, as described in <em>How to stay up-to-date</em>.</p>
+<h3 id="how-to-stay-up-to-date">How to stay up-to-date<a class="headerlink" href="#how-to-stay-up-to-date" title="Permanent link">&para;</a></h3>
+<p>Regardless of which of the above options you choose, one downside of this approach is that your pipeline will be out of sync with the centrally maintained pipelines at some point in time.
+We strongly recommend doing <em>as little modification as possible</em> to fulfil your requirements.
+Please be aware that stages may have dependencies on each other.</p>
+<div class="admonition warning">
+<p class="admonition-title">Don't depend on stage implementation details</p>
+<p>Your pipeline should treat <em>stages</em> as a black box, the stage implementations are not a published API and may be subject to change at any time.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Avoid accidental breaking changes</p>
+<p>By default, Jenkins uses the <code>master</code> branch of shared libraries.
+This way, you're always automatically using the latest and greatest version.
+The downside is that in rare cases, breaking changes might happen.
+Another potential issue is that your builds are not <em>repeatable</em>, that means building the same version of your application twice <em>might</em> have a different result.
+For those reasons, you might want to consider to fix versions to a released version like in this example: <code>@Library('my-shared-library@v1.0') _</code><br />
+Find the most recent release for the <a href="https://github.com/SAP/jenkins-library/releases">jenkins-library</a> and for the <a href="https://github.com/SAP/cloud-s4-sdk-pipeline/releases">SAP Cloud SDK Pipeline</a> on GitHub.
+To stay up to date with the latest releases, you can <a href="https://help.github.com/en/github/receiving-notifications-about-activity-on-github/watching-and-unwatching-releases-for-a-repository">"watch" releases for those repositories on GitHub</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">When to go with a modified ready-made pipeline</p>
+<p>This option is right for you if none of the provided ready-made pipelines serves your purpose, and individual stage extensions don't provide enough flexibility.</p>
+</div>
+<h3 id="advanced-tips-and-information">Advanced tips and information<a class="headerlink" href="#advanced-tips-and-information" title="Permanent link">&para;</a></h3>
+<p>When you consider adding additional capabilities, your first stop should be the <a href="https://jenkins.io/doc/pipeline/steps/">Jenkins Pipeline Steps Reference</a>.
+Here you get an overview of what kind of capabilities are already available and a list of related parameters, which you can use to customize the existing implementation.
+The provided information should help you understand and extend the functionality of your pipeline.</p>
+<h2 id="3-new-pipeline-from-scratch">3. New Pipeline from Scratch<a class="headerlink" href="#3-new-pipeline-from-scratch" title="Permanent link">&para;</a></h2>
+<p>Since project "Piper" fully builds on <a href="https://jenkins.io/doc/book/pipeline-as-code/">Jenkins Pipelines as Code</a>, you can also go with your own pipeline from scratch in a <code>Jenkinsfile</code>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Decoupling</p>
+<p>If you choose this option, you will be decoupled from the innovations provided with project "Piper", unless you re-use stages (as indicated above under <a href="./#2-modified-ready-made-pipeline"><em>2. Modified ready-made pipelines</em></a>), for example.</p>
+<p><strong>We recommend using this only when none of the other provided options suit your use case.</strong></p>
+</div>
                 
                   
                 
