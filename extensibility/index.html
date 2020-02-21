@@ -1737,8 +1737,9 @@ Be sure to checkout the <em>Library steps</em> section of this documentation if 
 Project "Piper" provides some basic building blocks such as <code>dockerExecute</code> and the already mentioned <code>mavenExecute</code> which might be helpful.</p>
 <h2 id="2-modified-ready-made-pipeline">2. Modified Ready-Made Pipeline<a class="headerlink" href="#2-modified-ready-made-pipeline" title="Permanent link">&para;</a></h2>
 <p>This option describes how you can copy and paste one of the centrally maintained pipelines to make changes to it that are not possible otherwise.
-For example, you can't change the order of stages and the stages that run in parallel or add new stages to a centrally maintained pipeline.
-This might be done for an individual project (in the <code>Jenkinsfile</code>), or in a separate Git repository so it can be used for multiple projects.</p>
+For example, you can't change the order of stages and the stages that run in parallel or add new stages to a centrally maintained pipeline.</p>
+<p>A <em>modified Ready-Made Pipeline</em> allows you to modify your <a href="https://jenkins.io/doc/book/pipeline/syntax/#declarative-pipeline">declarative pipeline based on the syntax Jenkins provides</a>.</p>
+<p>This might be done for an individual project (in the <code>Jenkinsfile</code>), or in a separate Git repository so it can be used for multiple projects.</p>
 <h3 id="single-project">Single project<a class="headerlink" href="#single-project" title="Permanent link">&para;</a></h3>
 <p>The default <code>Jenkinsfile</code> of centrally maintained pipelines does nothing else but loading the pipeline and running it.
 This is convenient but limits the modifiable aspects of the pipeline.</p>
