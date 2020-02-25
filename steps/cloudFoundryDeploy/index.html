@@ -1707,6 +1707,12 @@ You can find details in the <a href="https://docs.cloudfoundry.org/devguide/depl
 <td></td>
 </tr>
 <tr>
+<td><code>deployDockerImage</code></td>
+<td>no</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td><code>deployTool</code></td>
 <td>no</td>
 <td><code>cf_native</code></td>
@@ -1717,6 +1723,12 @@ You can find details in the <a href="https://docs.cloudfoundry.org/devguide/depl
 <td>no</td>
 <td><code>standard</code></td>
 <td>'standard', 'blue-green'</td>
+</tr>
+<tr>
+<td><code>dockerCredentialsId</code></td>
+<td>no</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>dockerImage</code></td>
@@ -1808,8 +1820,10 @@ You can find details in the <a href="https://docs.cloudfoundry.org/devguide/depl
 <li><code>cloudFoundry/manifestVariablesFiles</code> - Defines the manifest variables Yaml files to be used to replace variable references in manifest. This parameter is optional and will default to <code>["manifest-variables.yml"]</code>. This can be used to set variable files like it is provided by <code>cf push --vars-file &lt;file&gt;</code>.  If the manifest is present and so are all variable files, a variable substitution will be triggered that uses the <code>cfManifestSubstituteVariables</code> step before deployment. The format of variable references follows the <a href="https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#variable-substitution">Cloud Foundry standard</a>.</li>
 <li><code>cloudFoundry/org</code> - Cloud Foundry target organization.</li>
 <li><code>cloudFoundry/space</code> - Cloud Foundry target space.</li>
+<li><code>deployDockerImage</code> - Docker image deployments are supported (via manifest file in general)[https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#docker]. If no manifest is used, this parameter defines the image to be deployed. The specified name of the image is passed to the <code>--docker-image</code> parameter of the cf CLI and must adhere it's naming pattern (e.g. REPO/IMAGE:TAG). See (cf CLI documentation)[https://docs.cloudfoundry.org/devguide/deploy-apps/push-docker.html] for details.  Note: The used Docker registry must be visible for the targeted Cloud Foundry instance.</li>
 <li><code>deployTool</code> - Defines the tool which should be used for deployment.</li>
 <li><code>deployType</code> - Defines the type of deployment, either <code>standard</code> deployment which results in a system downtime or a zero-downtime <code>blue-green</code> deployment. If 'cf_native' as deployType and 'blue-green' as deployTool is used in combination, your manifest.yaml may only contain one application. If this application has the option 'no-route' active the deployType will be changed to 'standard'.</li>
+<li><code>dockerCredentialsId</code> - If the specified image in <code>deployDockerImage</code> is contained in a Docker registry, which requires authorization this defines the credentials to be used.</li>
 <li><code>dockerImage</code> - Name of the docker image that should be used. Configure with empty value to execute the command directly on the Jenkins system (not using a container). Omit to use the default image (cf. <a href="https://github.com/SAP/jenkins-library/blob/master/resources/default_pipeline_environment.yml">default_pipeline_environment.yml</a>) Overwrite to use custom Docker image.</li>
 <li><code>dockerWorkspace</code> - Kubernetes only: Specifies a dedicated user home directory for the container which will be passed as value for environment variable <code>HOME</code>.</li>
 <li><code>keepOldInstance</code> - In case of a <code>blue-green</code> deployment the old instance will be deleted by default. If this option is set to true the old instance will remain stopped in the Cloud Foundry space.</li>
@@ -1882,12 +1896,22 @@ You can find details in the <a href="https://docs.cloudfoundry.org/devguide/depl
 <td>X</td>
 </tr>
 <tr>
+<td><code>deployDockerImage</code></td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
 <td><code>deployTool</code></td>
 <td></td>
 <td>X</td>
 </tr>
 <tr>
 <td><code>deployType</code></td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td><code>dockerCredentialsId</code></td>
 <td></td>
 <td>X</td>
 </tr>
