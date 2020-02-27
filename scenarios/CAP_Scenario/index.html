@@ -1700,11 +1700,17 @@ For more information about the SAP Cloud Application Programming Model, see <a h
 Make sure to check the Include support for continuous delivery pipeline of SAP Cloud SDK checkbox, as in this screenshot:</p>
 <p><img alt="WebIDE project wizard" src="../../images/webide-pipeline-template.png" /></p>
 <p>This will generate a project which already includes a <code>Jenkinsfile</code>, and a <code>pipeline_config.yml</code> file.</p>
+<div class="admonition note">
+<p class="admonition-title">New location of pipeline configuration file</p>
+<p>The SAP Cloud SDK Pipeline recently changed the default location for the configuration file from <code>pipeline_config.yml</code> to <code>.config/pipeline</code> to have a consistent user experience with other piper pipelines.
+For a limited amount of time starting with version v29 both locations can be used.
+In the following the configuration file is referenced by its new location.</p>
+</div>
 <p>In case you already created your project without this option, you'll need to copy and paste two files into the root directory of your project, and commit them to your git repository:</p>
 <ul>
 <li><a href="https://github.com/SAP/cloud-s4-sdk-pipeline/blob/master/archetype-resources/Jenkinsfile"><code>Jenkinsfile</code></a></li>
-<li><a href="https://github.com/SAP/cloud-s4-sdk-pipeline/blob/master/archetype-resources/cf-pipeline_config.yml"><code>pipeline_config.yml</code></a><ul>
-<li>Note: The file must be named <code>pipeline_config.yml</code>, despite the different name of the file template</li>
+<li><a href="https://github.com/SAP/cloud-s4-sdk-pipeline/blob/master/archetype-resources/cf-pipeline_config.yml"><code>.pipeline/config.yml</code></a><ul>
+<li>Note: The file must be named <code>.pipeline/config.yml</code>, despite the different name of the file template</li>
 </ul>
 </li>
 </ul>
@@ -1712,7 +1718,7 @@ Make sure to check the Include support for continuous delivery pipeline of SAP C
 <p class="admonition-title">Using the right project structure</p>
 <p>This only applies to projects created based on the <em>SAP Cloud Platform Business Application</em> template after September 6th 2019. They must comply with the structure which is described <a href="https://github.com/SAP/cloud-s4-sdk-pipeline/blob/master/doc/pipeline/build-tools.md#sap-cloud-application-programming-model--mta">here</a>.</p>
 </div>
-<p>If your project uses SAP HANA containers (HDI), you'll need to configure <code>createHdiContainer</code> and <code>cloudFoundry</code> in the <code>backendIntegrationTests</code> stage in your <code>pipeline_config.yml</code> file as documented <a href="https://github.com/SAP/cloud-s4-sdk-pipeline/blob/master/configuration.md#backendintegrationtests">here</a></p>
+<p>If your project uses SAP HANA containers (HDI), you'll need to configure <code>createHdiContainer</code> and <code>cloudFoundry</code> in the <code>backendIntegrationTests</code> stage in your <code>.pipeline/config.yml</code> file as documented <a href="https://github.com/SAP/cloud-s4-sdk-pipeline/blob/master/configuration.md#backendintegrationtests">here</a></p>
 <p>Now, you'll need to push the code to a git repository.
 This is required because the pipeline gets your code via git.
 This might be GitHub, or any other cloud or on-premise git solution you have in your company.</p>
