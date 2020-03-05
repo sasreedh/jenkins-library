@@ -1610,8 +1610,9 @@
 <p>Delete CloudFoundryService</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>This step is for deleting an existing service on Cloud Foundry.
-You need to provide the Cloud Foundry API Endpoint, the Organisation as well as the Space and the respective Service Instance Name you want to delete. 
-Furthermore you will need to provide the Cloud Foundry Login Credentials, which must be stored in the Jenkins Configuration.</p>
+You need to provide the Cloud Foundry API Endpoint, the Organisation as well as the Space and the respective Service Instance Name you want to delete.
+Furthermore you will need to provide the Cloud Foundry Login Credentials, which must be stored in the Jenkins Configuration.
+Additionally you can set the cfDeleteServiceKeys flag for deleting all Service Keys that belong to the respective Service.</p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1633,6 +1634,12 @@ Furthermore you will need to provide the Cloud Foundry Login Credentials, which 
 <td>cfCredentialsId</td>
 <td>Yes</td>
 <td><nil></td>
+<td></td>
+</tr>
+<tr>
+<td>cfDeleteServiceKeys</td>
+<td>No</td>
+<td>false</td>
 <td></td>
 </tr>
 <tr>
@@ -1695,6 +1702,7 @@ Furthermore you will need to provide the Cloud Foundry Login Credentials, which 
 <ul>
 <li><code>cfApiEndpoint</code> :  Cloud Foundry API endpoint </li>
 <li><code>cfCredentialsId</code> :  Jenkins credentials ID containing user and password to authenticate to the Cloud Foundry API </li>
+<li><code>cfDeleteServiceKeys</code> :  Parameter to force deletion of Cloud Foundry Service Keys </li>
 <li><code>cfOrg</code> :  CF org </li>
 <li><code>cfServiceInstance</code> :  Parameter of ServiceInstance Name to delete CloudFoundry Service </li>
 <li><code>cfSpace</code> :  CF Space </li>
@@ -1718,6 +1726,11 @@ Furthermore you will need to provide the Cloud Foundry Login Credentials, which 
 <tbody>
 <tr>
 <td>cfApiEndpoint</td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td>cfDeleteServiceKeys</td>
 <td></td>
 <td>X</td>
 </tr>
@@ -1776,7 +1789,8 @@ Furthermore you will need to provide the Cloud Foundry Login Credentials, which 
     <span class="nl">cfspace:</span> <span class="s1">&#39;cfspace&#39;</span><span class="o">,</span>
     <span class="nl">cfserviceInstance:</span> <span class="s1">&#39;cfserviceInstance&#39;</span><span class="o">,</span>
     <span class="nl">cfCredentialsId:</span> <span class="s1">&#39;cfcredentialsId&#39;</span><span class="o">,</span>
-<span class="o">)</span> 
+    <span class="nl">cfDeleteServiceKeys:</span> <span class="kc">true</span><span class="o">,</span>
+<span class="o">)</span>
 </pre></div>
                 
                   
