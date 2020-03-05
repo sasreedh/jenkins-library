@@ -1786,6 +1786,7 @@
 docker image. This images comes with preinstalled plugins.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="n">handlePipelineStepErrors</span> <span class="o">(</span><span class="nl">stepName:</span> <span class="s1">&#39;executeHealthCheck&#39;</span><span class="o">,</span> <span class="nl">stepParameters:</span> <span class="n">parameters</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// The code you want to get controlled by the error handler goes right here into the closure</span>
   <span class="kt">def</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Utils</span><span class="o">().</span><span class="na">getMandatoryParameter</span><span class="o">(</span><span class="n">parameters</span><span class="o">,</span> <span class="s1">&#39;url&#39;</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
   <span class="kt">def</span> <span class="n">statusCode</span> <span class="o">=</span> <span class="n">curl</span><span class="o">(</span><span class="n">url</span><span class="o">)</span>
   <span class="k">if</span> <span class="o">(</span><span class="n">statusCode</span> <span class="o">!=</span> <span class="s1">&#39;200&#39;</span><span class="o">)</span>
