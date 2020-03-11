@@ -1744,6 +1744,12 @@ docker image. This images comes with preinstalled plugins.</p>
 <td></td>
 </tr>
 <tr>
+<td><code>seleniumHubCredentialsId</code></td>
+<td>no</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td><code>sidecarEnvVars</code></td>
 <td>no</td>
 <td><code>[NO_PROXY:localhost,karma,$NO_PROXY, no_proxy:localhost,karma,$no_proxy]</code></td>
@@ -1787,6 +1793,7 @@ docker image. This images comes with preinstalled plugins.</p>
 <li><code>modules</code> - Define the paths of the modules to execute tests on.</li>
 <li><code>runCommand</code> - The command that is executed to start the tests.</li>
 <li><code>script</code> - The common script environment of the Jenkinsfile running. Typically the reference to the script calling the pipeline step is provided with the <code>this</code> parameter, as in <code>script: this</code>. This allows the function to access the <code>commonPipelineEnvironment</code> for retrieving, e.g. configuration parameters.</li>
+<li><code>seleniumHubCredentialsId</code> - Defines the id of the user/password credentials to be used to connect to a Selenium Hub. The credentials are provided in the environment variables <code>PIPER_SELENIUM_HUB_USER</code> and <code>PIPER_SELENIUM_HUB_PASSWORD</code>.</li>
 <li><code>sidecarEnvVars</code> - A map of environment variables to set in the sidecar container, similar to <code>dockerEnvVars</code>.</li>
 <li><code>sidecarImage</code> - The name of the docker image of the sidecar container. If empty, no sidecar container is started.</li>
 <li><code>sidecarName</code> - as <code>dockerName</code> for the sidecar container</li>
@@ -1859,6 +1866,11 @@ docker image. This images comes with preinstalled plugins.</p>
 <td><code>script</code></td>
 <td></td>
 <td></td>
+</tr>
+<tr>
+<td><code>seleniumHubCredentialsId</code></td>
+<td>X</td>
+<td>X</td>
 </tr>
 <tr>
 <td><code>sidecarEnvVars</code></td>
